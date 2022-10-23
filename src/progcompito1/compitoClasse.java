@@ -34,7 +34,6 @@ public class compitoClasse {
     }
     
     public int contieneVocaleMaiuscola(String s1) {
-        String s2 = s1.toUpperCase();
         char c;
         for (int i= 0; i < s1.length(); i++) {
             c=s1.charAt(i);
@@ -48,8 +47,8 @@ public class compitoClasse {
     public int treConsonantiConsecutive(String s1) {
         int cont = 0;
         char c;
+        s1 = s1.toLowerCase();
         for (int i = 0; i < s1.length(); i++) {
-            s1 = s1.toLowerCase();
             c=s1.charAt(i);
             if (c != 'a'  && c != 'e'  && c != 'i' && c != 'o'  && c != 'u' && c != 'y') {
                 cont++;
@@ -66,11 +65,11 @@ public class compitoClasse {
     
     public int doppia(String s1) {
         int cont = 0;
-        boolean trov = false;
         char c;
-        for (int i = 0; i < s1.length()-1 && !trov; i++) {
+        s1=s1.toLowerCase();
+        for (int i = 0; i < s1.length()-1; i++) {
             c=s1.charAt(i);
-            if (c == s1.charAt(i+1) && c != 'a' && c != 'A' && c != 'e' && c != 'E' && c != 'i' && c != 'I' && c != 'o' && c != 'O' && c != 'u' && c != 'U' && c != 'y' && c != 'Y' ) {
+            if (c == s1.charAt(i+1) && c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u' && c != 'y') {
                 cont++;
             }
             if (c != s1.charAt(i+1)) {
